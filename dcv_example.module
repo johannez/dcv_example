@@ -1,0 +1,42 @@
+<?php
+/**
+ * @file
+ * Hooks and main functionality.
+ */
+
+
+/**
+ * Implements hook_menu().
+ *
+ * - Search 404 redirect
+ */
+function dcv_example_menu() {
+  $items = array();
+
+  $items['search-404'] = array(
+    'title' => 'Search me',
+    'page callback' => 'dcv_example_handle_404',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+
+/**
+ * Callback to redirect to the search page for 404 request
+ */
+function dcv_example_handle_404() {
+  // Get the requested page name.
+  $dest = drupal_get_destination();
+
+  // Set up the path.
+  $destination = 'search/node/' . $dest['destination'];
+
+  // Set the destination parameter otherwise it will loop out.
+  $_GET['destination'] = $destination;
+
+  // Send to the search page.
+  drupal_goto($destination);
+}

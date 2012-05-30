@@ -1,0 +1,12 @@
+; Basic required information
+name = Custom module examples
+core = 7.x
+
+
+; Additional recommended information
+description = Showcase for different hooks and functionality.
+version = "7.x-1.0"
+package = Drupal Camp Vancouver
+
+; Adding JQuery files
+scripts[] = js/fadeExample.js
