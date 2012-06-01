@@ -1,0 +1,64 @@
+<?php
+/**
+ * @file
+ * Hooks and main functionality.
+ */
+
+
+/**
+ * Implements hook_block_info().
+ *
+ * - Define user status block
+ */
+function dcv_status_block_info() {
+  $blocks['user_status'] = array(
+    'info' => t('User status'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * - Generate user status block message
+ */
+function dcv_status_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'user_status':
+      global $user;
+
+      $block['subject'] = t('Status');
+      $block['content'] = theme('dcv_status_block', array('name' => $user->name, 'message' => t("how is it going over there?")));
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ *
+ * - User status block
+ */
+function dcv_status_theme($existing, $type, $theme, $path) {
+  return array(
+    'dcv_status_block' => array(
+      'variables' => array('name' => NULL, 'message' => NULL),
+    ),
+  );
+}
+
+/**
+ * Theming function for status block
+ */
+function theme_dcv_status_block($vars) {
+  $output = '';
+
+  $output = t("<div class=\"name\">Hey @name,</div>", array('@name' => $vars['name']));
+  $output .= "<div class=\"message\">{$vars['message']}</div>";
+
+  return $output;
+}
+

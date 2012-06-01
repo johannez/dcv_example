@@ -1,12 +1,12 @@
 ; Basic required information
-name = Custom module examples
+name = Jquery love
 core = 7.x
 
 
 ; Additional recommended information
-description = Showcase for different hooks and functionality.
+description = Show how to implement javascript files.
 version = "7.x-1.0"
 package = Drupal Camp Vancouver
 
 ; Adding JQuery files
-scripts[] = js/fadeExample.js
+scripts[] = fadeExample.js

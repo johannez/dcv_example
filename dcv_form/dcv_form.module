@@ -1,0 +1,35 @@
+<?php
+/**
+ * @file
+ * Hooks and main functionality.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function dcv_form_menu() {
+  $items['admin/config/system/dcv'] = array(
+    'title' => t('DCV settings'),
+    'description' => t('You know what you have to do.'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('dcv_form_settings_form'),
+    'access arguments' => array('administer dcv examples'),
+    'file' => 'dcv_form.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+
+/**
+ * Implements hook_permission().
+ */
+function dcv_form_permission() {
+  return array(
+    'administer dcv examples' =>  array(
+      'title' => t('Administrate special examples'),
+      'description' => t('Grands you more power!'),
+    ),
+  );
+}

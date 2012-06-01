@@ -1,0 +1,15 @@
+<?php
+/**
+ * @file
+ * Hooks and main functionality.
+ */
+
+
+// /**
+//  * Implements hook_init().
+//  */
+// function dcv_jquery_init() {
+
+//   drupal_add_js(drupal_get_path('module', 'dcv_jquery') . '/fadeExample.js');
+
+// }
