@@ -16,7 +16,6 @@ function dcv_form_settings_form($form, &$form_state) {
     '#default_value' => variable_get('dcv_form_name', ''),
     '#size' => 20,
     '#maxlength' => 40,
-    //'#required' => TRUE,
   );
 
   $form['feature_enable'] = array(

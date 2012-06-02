@@ -1,0 +1,13 @@
+<?php
+/**
+ * @file
+ * Special hooks for the module installation.
+ */
+
+
+/**
+ * Implements hook_install().
+ */
+function dcv_search404_install() {
+  variable_set('site_404', 'search-404');
+}
