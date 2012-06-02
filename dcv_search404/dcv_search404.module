@@ -15,7 +15,7 @@ function dcv_search404_menu() {
 
   $items['search-404'] = array(
     'title' => 'Search me',
-    'page callback' => 'dcv_search_handle_404',
+    'page callback' => 'dcv_search404_handle_404',
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
   );

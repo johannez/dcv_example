@@ -12,7 +12,7 @@
  */
 function dcv_status_block_info() {
   $blocks['user_status'] = array(
-    'info' => t('User status'),
+    'info' => t('DCV user status'),
   );
 
   return $blocks;
