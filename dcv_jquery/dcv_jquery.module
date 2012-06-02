@@ -5,11 +5,12 @@
  */
 
 
-// /**
-//  * Implements hook_init().
-//  */
+/**
+ * Implements hook_init().
+ */
 // function dcv_jquery_init() {
 
-//   drupal_add_js(drupal_get_path('module', 'dcv_jquery') . '/fadeExample.js');
+//   //drupal_add_js(drupal_get_path('module', 'dcv_jquery') . '/fadeExample.js');
 
+//   //drupal_add_js(array('dcv_jquery' => array('newTitle' => 'Good morning')), 'setting');
 // }
